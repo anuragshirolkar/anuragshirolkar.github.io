@@ -1,0 +1,80 @@
+<div id="popper" onclick="togglePop()" title="pop!">
+  <div id="popper-toggle" {{#if pop}} class="popper-red" {{else}} class="popper-white" {{/if}}></div>
+</div>
+
+<div id="title">ANURAG SHIROLKAR</div>
+
+<div id="tabs-container">
+  <div id="home-tab-link"
+    class="tab {{#ifeq tab 'home'}} {{#if pop}} active-tab-pop {{else}} active-tab {{/if}} {{/ifeq}}"
+    onclick="switchTab('home')">HOME</div>
+  <div id="projects-tab-link"
+    class="tab {{#ifeq tab 'projects'}} {{#if pop}} active-tab-pop {{else}} active-tab {{/if}} {{/ifeq}}"
+    onclick="switchTab('projects')">
+    PROJECTS</div>
+</div>
+
+<style>
+  #popper {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    right: 40px;
+    bottom: 40px;
+    cursor: pointer;
+    opacity: 0.5;
+  }
+
+  #popper-toggle {
+    width: 11.6px;
+    height: 11.6px;
+    margin: 4px;
+  }
+
+  .popper-red {
+    background-color: #A45461;
+  }
+
+  .popper-white {
+    background-color: #ccc;
+  }
+
+  #title {
+    font-family: none;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 10px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  #tabs-container {
+    display: flex;
+    margin-bottom: 40px;
+    justify-content: center;
+  }
+
+  .tab {
+    letter-spacing: 2px;
+    font-size: 14px;
+    color: #999;
+    font-weight: 500;
+    margin: 0px 20px 0px 20px;
+  }
+
+  .active-tab {
+    color: #ccc;
+    border-bottom: 2px solid #ccc;
+  }
+
+  .active-tab-pop {
+    color: #ccc;
+    border-bottom: 2px solid #A45461;
+  }
+
+  .tab:hover {
+    cursor: pointer;
+  }
+</style>
